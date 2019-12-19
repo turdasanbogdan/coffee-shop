@@ -1,0 +1,28 @@
+<div>
+ <h4>
+ Your Order
+</h4>
+</div>
+<table id=" orders " >
+
+    <tbody>
+     <tr *ngFor ="let orders of ordersList; let orderindex= index ">
+         <td class="text-center ">{{ orderindex +1 }} </td>
+         <td class="text-center"> {{order.name}} </td>
+         <td class="text-center">{{ order.price }}</td>
+         <td class="text-center">
+             <a class="delete-icon"  (click)="deleteOrder(orderindex)">
+             </a>
+         </td>
+       </tr>
+       <tr *ngIf="orderList.length === 0" >
+         <td colspan="4" class="text-center" > No order</td>
+       </tr>          
+      <tr>
+        <td class="text-center" colspan="3">Total</td>
+        <td calss="tect-center"> {{ calculateSumPrice() }}</td>  
+      </tr> 
+      </tbody>
+    
+</table>   
+    
